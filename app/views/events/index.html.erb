@@ -1,0 +1,25 @@
+<!-- Accueil du site-->
+
+<div class="jumbotron">
+  <div class="container">
+    <center><h2 class="display-3 m-4">Les Events du moment</h2></br>
+    <div class=" mb-4"><%= link_to "Proposer un Event", new_event_path, :class => "btn btn-outline-danger btn-lg" %></div></center>
+  </div>
+</div>
+<!-- affichage des events -->
+  <div class="card-columns border-warning container ">
+  <% @events.each do |i| %>
+    <div class="card">
+      <div class="card-header pb-2 d-flex">
+        <h5 class="card-title text-warning"><%= i.title %></h5>
+        <div class="ml-auto">
+        </div>
+
+      </div>
+      <div class="card-body text-center">
+        <p class="card-subtitle mb-3"><%= i.description %></p>
+        <%= link_to "En savoir plus", event_path(i.id),:class => "btn-outline-warning btn p-1"%>
+      </div>
+    </div>
+  <% end %>
+</div>

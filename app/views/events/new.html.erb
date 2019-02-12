@@ -1,0 +1,37 @@
+<!-- Création d'un event -->
+
+<div class="card border-warning m-5">
+ <div class="card-header">
+  <center>
+    <h1><i class="fas fa-sun"></i> Ajouter un event</h1>
+    </div>
+    <center><%= form_tag url_for(action: 'create'), method: "post" do %>
+        <div class="card-body text-warning">
+          <div class="form-group">
+            <%= text_field_tag 'title', @event.title, class: "form-control mb-1", placeholder: "Mon titre..." %>
+            <%= text_area_tag 'description', @event.description, class: "form-control mb-1", placeholder: "Ma description..." %>
+            <%= text_field_tag 'start_date', @event.start_date, class: "form-control mb-1", placeholder: "Date de début (format jour/mois/année)" %>
+            <%= text_field_tag 'duration', @event.duration, class: "form-control mb-1", placeholder: "Durée (multiple de 5min)" %>
+            <%= text_field_tag 'price', @event.price, class: "form-control mb-1", placeholder: "Prix" %>
+            <%= text_field_tag 'location', @event.location, class: "form-control mb-1", placeholder: "Lieu" %>
+            <br />
+            <%= submit_tag "Créer mon Event", class: "btn btn-outline-warning" %>
+          <% end %></center>
+        </div>
+      </div>
+  </div>
+      <% if @event.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+          <p>Impossible de créer l'event pour la/les raison(s) suivante(s) :</p>
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+      </div>
+        <% end %>
+  </center>
+
+
+
+
