@@ -10,7 +10,7 @@
   Les validations</br>
   Les tests unitaires de models</br>
   Un seed</br>
-  Le mailer</br>
+  Le mailer tout puissant</br>
 
   <h2> Eventbritement vôtre.</h2>
 
