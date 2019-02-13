@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :events
-  resources :attendances
+  resources :events do
+    resources :attendances, only: [:new, :create]
+  end
   resources :users
-  resources :charges, only: [:new, :create]
   root 'events#index'
 end
