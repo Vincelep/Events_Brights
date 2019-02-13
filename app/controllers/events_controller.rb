@@ -63,7 +63,7 @@ class EventsController < ApplicationController
     def authenticate_user
       unless current_user
           flash[:danger] = "Connecte-toi ;)"
-          redirect_to new_session_path
+          redirect_to user_session_path
       end
     end
 

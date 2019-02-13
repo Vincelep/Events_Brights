@@ -21,11 +21,11 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       if user_signed_in?
         if current_user.id != @user.id
-            flash[:danger] = "Tu ne peux pas modifier le profil d'une autre personne ;)"
+            flash[:danger] = "Déso, tu ne peux pas modifier le profil d'une autre personne ;)"
             redirect_to root_path
         end
       else
-        flash[:danger] = "Connecte-toi pour modifier ton profil"
+        flash[:danger] = "Connecte-toi pour modifier ton profil."
         redirect_to root_path
       end
     end
