@@ -1,6 +1,7 @@
 class AttendancesController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :only_user, only: [:index]
 
 
   def new
@@ -10,8 +11,7 @@ class AttendancesController < ApplicationController
 
   def index
     @event = Event.find(params[:event_id])
-    @attendance = Attendance.find(params[:event_id])
-    #@participant = @attendance.attendee_id
+    @attendees = @event.attendees
   end
 
   def create
@@ -44,6 +44,16 @@ class AttendancesController < ApplicationController
       flash[:error] = e.message
       redirect_to event_path
 
+  end
+
+  private
+
+  def only_user
+    @event = Event.find(params[:event_id])
+    unless current_user == @event.administrator
+      redirect_to root_path
+      flash[:danger] = "Ce n'est pas votre évènement !"
+    end
   end
 
 end

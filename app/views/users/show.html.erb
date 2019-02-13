@@ -21,20 +21,18 @@
 </div>
 
 <% if @user.admin_events.count > 0 %>
-<h2 class="text-center mb-5">Mes Events du moment... </h2>
-<div class="card-columns border-warning container">
-  <% @user.admin_events.each do |i| %>
-    <div class="card">
-      <div class="card-header pb-2 d-flex">
-        <h5 class="card-title text-warning"><%= i.title %></h5>
-        <div class="ml-auto">
+  <h2 class="text-center mb-5">Mes Events du moment... </h2>
+  <div class="card-columns border-warning container">
+    <% @user.admin_events.each do |i| %>
+      <div class="card">
+        <div class="card-header text-center">
+          <h5 class="card-title text-warning"><%= i.title %></h5>
+        </div>
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-3"><%= i.description %></h6>
+          <%= link_to "Voir plus", event_path(i.id),:class => "btn-outline-warning btn p-1"%>
         </div>
       </div>
-      <div class="card-body text-center">
-        <h6 class="card-subtitle mb-3"><%= i.description %></h6>
-        <%= link_to "Voir plus", event_path(i.id),:class => "btn-outline-warning btn p-1"%>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 <% end %>

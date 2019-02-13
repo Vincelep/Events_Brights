@@ -3,7 +3,7 @@
 <div class="card border-warning m-5">
  <div class="card-header">
   <center>
-    <h1><i class="fas fa-sun"></i> Ajouter un event</h1>
+    <h1>🎫 Ajouter un event</h1>
   </div>
   <center><%= form_tag url_for(action: 'create'), method: "post" do %>
     <div class="card-body text-warning">
@@ -15,7 +15,7 @@
 
         <div class="form-group">
           <%= label_tag 'Description' %>
-          <%= text_area_tag 'description', "#{@event.description}", :class => "form-control", :rows => "4" %>
+          <%= text_field_tag 'description', "#{@event.description}", :class => "form-control", :rows => "4" %>
         </div>
 
         <div class="form-group">
@@ -25,12 +25,12 @@
 
         <div class="form-group">
           <%= label_tag 'Duration' %>
-          <%= text_field_tag 'duration', "#{@event.duration}", :class => "form-control", :rows => "4" %>
+          <%= text_field_tag 'duration', "#{@event.duration}", :class => "form-control", :placeholder => "5, 10, 15, 20 min etc..", :rows => "4" %>
         </div>
 
         <div class="form-group">
           <%= label_tag 'Price' %>
-          <%= text_field_tag 'price', "#{@event.price}", :class => "form-control", :rows => "4" %>
+          <%= text_field_tag 'price', "#{@event.price}", :class => "form-control", :placeholder => "Min 1 € - Max 999 €", :rows => "4" %>
         </div>
 
         <div class="form-group">
@@ -40,7 +40,7 @@
 
 
         <br />
-        <%= submit_tag "Créer mon Event", class: "btn btn-outline-warning btn-sm" %>
+        <%= submit_tag "Créer mon Event", class: "btn btn-outline-warning btn-lg" %>
         <% end %></center>
       </div>
     </div>

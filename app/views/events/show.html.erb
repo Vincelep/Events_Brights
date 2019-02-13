@@ -30,7 +30,7 @@
 
 <div class="text-center">
   <% if current_user == @event.administrator %>
-    <%= link_to "Mon espace événement", event_attendances_path(@event), class: "btn btn-outline-danger btn-lg" %>
+    <%= link_to "Mon espace évènement", event_attendances_path(@event), class: "btn btn-outline-danger btn-lg" %>
   <% end %>
 </div>
 <!-- à utiliser pour faire en sorte qu'on puisse participer ssi on est ni admin ni attendee
