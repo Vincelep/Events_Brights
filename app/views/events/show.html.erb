@@ -21,8 +21,13 @@
 
 </div>
 <div class="text-center">
-<%= link_to "Rejoindre l'event", new_event_attendance_path(@event), class: "btn btn-outline-danger btn-lg" %>
+  <% if current_user == @event.administrator %>
+  <% elsif @event.attendees.include? current_user %>
+  <% else %>
+    <%= link_to "Rejoindre l'event", new_event_attendance_path(@event), class: "btn btn-outline-danger btn-lg" %>
+  <% end %>
 </div>
+
 <!-- à utiliser pour faire en sorte qu'on puisse participer ssi on est ni admin ni attendee
   def is_user_new_for_event?
     if current_user != @event.admin && current_user != @event.attendees.find(current_user)
