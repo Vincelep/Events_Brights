@@ -6203,3 +6203,50 @@ app/controllers/charges_controller.rb:9:in `create'
   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2019-02-13 17:44:41 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 376ms (Views: 337.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2019-02-13 17:44:47 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."administrator_id" = $1[0m  [["administrator_id", 4]]
+  ↳ app/views/users/show.html.erb:23
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."administrator_id" = $1[0m  [["administrator_id", 4]]
+  ↳ app/views/users/show.html.erb:26
+  Rendered users/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 50ms (Views: 41.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2019-02-13 17:44:50 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 5]]
+  ↳ app/views/events/show.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendered events/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 84ms (Views: 46.1ms | ActiveRecord: 3.2ms)
+
+
