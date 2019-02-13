@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  after_create :welcome_send
+  #after_create :welcome_send # à réactiver si on veut un mailer, mais mal pairé avec devise
 
   # ASSOCIATIONS
   has_many :attendances, foreign_key: 'attendee_id'
