@@ -28,6 +28,11 @@
   <% end %>
 </div>
 
+<div class="text-center">
+  <% if current_user == @event.administrator %>
+    <%= link_to "Mon espace événement", event_attendances_path(@event), class: "btn btn-outline-danger btn-lg" %>
+  <% end %>
+</div>
 <!-- à utiliser pour faire en sorte qu'on puisse participer ssi on est ni admin ni attendee
   def is_user_new_for_event?
     if current_user != @event.admin && current_user != @event.attendees.find(current_user)

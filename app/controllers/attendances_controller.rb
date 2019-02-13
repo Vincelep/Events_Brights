@@ -2,9 +2,16 @@ class AttendancesController < ApplicationController
 
   before_action :authenticate_user!
 
+
   def new
     @event = Event.find(params[:event_id])
     @amount = @event.price
+  end
+
+  def index
+    @event = Event.find(params[:event_id])
+    @attendance = Attendance.find(params[:event_id])
+    #@participant = @attendance.attendee_id
   end
 
   def create
