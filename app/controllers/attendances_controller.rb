@@ -31,11 +31,11 @@ class AttendancesController < ApplicationController
       :currency    => 'eur'
     )
 
-    @attendance = Attendance.new(attendee_id: current_user.id, event_id: params[:event_id])
+    @attendance = Attendance.new(attendee_id: current_user.id, event_id: params[:event_id], stripe_customer_id: customer.id)
     #flash[:success] = "Vous participez à l'évènement"
     #redirect_to @event
     if @attendance.save     
-      redirect_to event_path(params[:event_id]) # id à rajouter
+      redirect_to event_path(@event) # id à rajouter
       flash[:success] = "Vous participez à l'évènement"
     else
     end
