@@ -5,7 +5,7 @@
 
   <h2> Lien vers la version en production 🎬 :</h2>
 
-  *events-brights.herokuapp.com*
+  *https://events-brights.herokuapp.com/*
 
   <h2> Notre précieux 💎 :</h2>
 
