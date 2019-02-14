@@ -1,16 +1,20 @@
 
   <h1> 🕺🏻 EVENT BRAAAAAAAA ITE 🕺 </h1>
 
-  *Notre chère et tendre app Rails de gestion d'événements.*
+  Notre chère et tendre app Rails de gestion d'événements.
 
-  <h2> Notre précieux :</h2>
+  <h2> Lien vers la version en production 🎬 :</h2>
+
+  *events-brights.herokuapp.com*
+
+  <h2> Notre précieux 💎 :</h2>
 
   Ce programme comprend:</br>
-  Les trois models, avec leurs attributs</br>
-  Les validations</br>
-  Les tests unitaires de models</br>
-  Un seed</br>
-  Le mailer tout puissant</br>
+  Un système de paiement chanmé provenant d'une petite PME qui se fait appeler Stripe</br>
+  Une inscription aux évènements dynamiques</br>
+  La possibilité de modifier son event, ou même de le supprimer</br>
+  La possibilité de modifier son profil, ses infos persos etc.</br></br>
+  Et plein d'autres trucs de barjot, mais tu seras gentil de te référer au manuel 👨🏻</br>
 
   <h2> Eventbritement vôtre.</h2>
 
