@@ -17,7 +17,7 @@ class AttendancesController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     # Amount in cents
-    @amount = @event.price
+    @amount = (@event.price)*100 # *100 à ajouter
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -25,7 +25,7 @@ class AttendancesController < ApplicationController
     )
 
     charge = Stripe::Charge.create(
-      :customer    => customer.id,
+      :customer    => customer.id, # stipe id que je dois récupérer !!! charge[:customer]
       :amount      => @amount,
       :description => 'Paiement du participant', #{@attendee.first_name} #{@attendee.last_name}
       :currency    => 'eur'
@@ -35,7 +35,7 @@ class AttendancesController < ApplicationController
     #flash[:success] = "Vous participez à l'évènement"
     #redirect_to @event
     if @attendance.save     
-      redirect_to event_path
+      redirect_to event_path(@event.id) # id à rajouter
       flash[:success] = "Vous participez à l'évènement"
     else
     end
