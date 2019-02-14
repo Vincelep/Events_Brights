@@ -1,5 +1,5 @@
 class Attendance < ApplicationRecord
-  after_create :newattendee_send
+  #after_create :newattendee_send
 
   # ASSOCIATIONS
   belongs_to :attendee, class_name: 'User'
