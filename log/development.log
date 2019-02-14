@@ -13969,3 +13969,164 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 209ms (Views: 180.9ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/events/6" for 127.0.0.1 at 2019-02-14 01:28:06 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 6]]
+  ↳ app/views/events/show.html.erb:12
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (10.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 6], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:25
+  Rendered events/show.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 386ms (Views: 321.2ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2019-02-14 01:28:09 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 5]]
+  ↳ app/views/events/show.html.erb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 5], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:25
+  Rendered events/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 275ms (Views: 250.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/events/5/attendances/new" for 127.0.0.1 at 2019-02-14 01:28:11 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event_id"=>"5"}
+  [1m[36mUser Load (38.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 165ms (Views: 101.8ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/events/5/attendances" for 127.0.0.1 at 2019-02-14 01:28:32 +0100
+Processing by AttendancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DaxVz+G/pJgg5zRg/P47ltXnaWNNKS4XHimVXR8YaZjKVxqYxwnrCOpnSeyfmBnfHDny5kGc8mrw+93i5kI39w==", "stripeToken"=>"tok_1E3Y5a2eZvKYlo2CRpzAhQLq", "stripeTokenType"=>"card", "stripeEmail"=>"noe.marguillard@sfr.fr", "event_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/attendances_controller.rb:37
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:37
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:37
+  [1m[36mAttendance Create (1.0ms)[0m  [1m[32mINSERT INTO "attendances" ("event_id", "attendee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["event_id", 5], ["attendee_id", 1], ["created_at", "2019-02-14 00:28:36.102764"], ["updated_at", "2019-02-14 00:28:36.102764"]]
+  ↳ app/controllers/attendances_controller.rb:37
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/mailers/admin_mailer.rb:5
+  Rendering admin_mailer/newattendee_email.html.erb within layouts/mailer
+  Rendered admin_mailer/newattendee_email.html.erb within layouts/mailer (1.8ms)
+  Rendering admin_mailer/newattendee_email.text.erb within layouts/mailer
+  Rendered admin_mailer/newattendee_email.text.erb within layouts/mailer (1.4ms)
+AdminMailer#newattendee_email: processed outbound mail in 119.5ms
+Sent mail to julien@j.com (532.0ms)
+Date: Thu, 14 Feb 2019 01:28:36 +0100
+From: no-reply@monsite.fr
+To: julien@j.com
+Message-ID: <5c64b634a02ce_68de3fc2fca21184863b3@MBP-de-Noe.mail>
+Subject: =?UTF-8?Q?No=C3=A9_Marguillard_s'est_inscrit_=C3=A0_ton_event_!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c64b6349c6a4_68de3fc2fca2118486282";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c64b6349c6a4_68de3fc2fca2118486282
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgIGV0IGJpZW52ZW51ZSBjaGV6IG5vdXMgIQ0KPT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PQ0KDQpOb8OpIE1hcmd1aWxsYXJkICBzJ2VzdCBpbnNjcml0IMOgIHRvbiBl
+dmVudCBQbGF0ZWZvcm1lIGluZGV4IGRlcyBlbmRyb2l0cyBwb3VyIGRpZ2l0
+YWwgbm9tYWQgZGFucyBQYXJpcywgYXZlYyB1bmUgZm9uY3Rpb24gUmFuZG9t
+IHBvdXIgYWlkZXIgbGVzIGdyb3VwZXMgVEhQLiAhDQoNCsOAIHRyw6hzIHZp
+dGUgc3VyIGh0dHBzOi8vdGhwLWV2ZW50LXByb2plY3QuaGVyb2t1YXBwLmNv
+bS8gIQ0KDQo=
+
+----==_mimepart_5c64b6349c6a4_68de3fc2fca2118486282
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <h1>Salut  !</h1>=0D
+    <p>=0D
+      No=C3=A9 Marguillard s'est inscrit =C3=A0 ton event Plateforme inde=
+x des endroits pour digital nomad dans Paris, avec une fonction Random po=
+ur aider les groupes THP. !=0D
+    </p>=0D
+=0D
+    <p> =C3=80 tr=C3=A8s vite sur https://thp-event-project.herokuapp.com=
+/ !=0D
+  </body>=0D
+</html>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5c64b6349c6a4_68de3fc2fca2118486282--
+
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/attendances_controller.rb:37
+Redirected to http://localhost:3000/events/5
+Completed 302 Found in 4238ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2019-02-14 01:28:37 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 5]]
+  ↳ app/views/events/show.html.erb:12
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 5], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:25
+  Rendered events/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 117ms (Views: 101.7ms | ActiveRecord: 3.5ms)
+
+
