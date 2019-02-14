@@ -14,7 +14,7 @@
   Une inscription aux évènements dynamiques</br>
   La possibilité de modifier son event, ou même de le supprimer</br>
   La possibilité de modifier son profil, ses infos persos etc.</br></br>
-  Et plein d'autres trucs de barjot, mais tu seras gentil de te référer au <h3>manuel 👨🏻</h3></br>
+  Et plein d'autres trucs de barjot, mais tu seras gentil de te référer au... <h3>manuel 👨🏻</h3></br>
 
   <h2> Eventbritement vôtre.</h2>
 
