@@ -14,10 +14,12 @@
   Une inscription aux évènements dynamiques</br>
   La possibilité de modifier son event, ou même de le supprimer</br>
   La possibilité de modifier son profil, ses infos persos etc.</br></br>
-  Et plein d'autres trucs de barjot, mais tu seras gentil de te référer au manuel 👨🏻</br>
+  Et plein d'autres trucs de barjot, mais tu seras gentil de te référer au **manuel 👨🏻 **</br>
 
   <h2> Eventbritement vôtre.</h2>
 
   *Note: dans un tout autre registre, ne pas oublier de faire un petit bundle install, un rails db:create, un rails db:migrate, et enfin un rails db:seed.
 
   *Ne pas hésiter à afficher les tables en consoles, et à tester les associations, qui normalement sont aux petits oignons 🥙*
+
+  @Noé et @Vince
