@@ -35,7 +35,7 @@ class AttendancesController < ApplicationController
     #flash[:success] = "Vous participez à l'évènement"
     #redirect_to @event
     if @attendance.save     
-      redirect_to event_path(@event)
+      redirect_to event_path
       flash[:success] = "Vous participez à l'évènement"
     else
     end
