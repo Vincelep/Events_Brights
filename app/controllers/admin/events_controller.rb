@@ -25,7 +25,7 @@ class Admin::EventsController < ApplicationController
         render :edit
       end
   end
-  
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
