@@ -17668,3 +17668,102 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 63ms (Views: 51.0ms | ActiveRecord: 7.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:50:18 +0100
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 500 Internal Server Error in 427ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_is_admin?' for #<#<Class:0x00007f8725a76df0>:0x00007f872d5c7b08>):
+    36:         <!-- partie droite avec dropdown -->
+    37:         <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    38: 
+    39:           <% if user_signed_in? && user_is_admin? %> 
+    40:             <div class="nav-item dropdown">
+    41:                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    42:                   <% if current_user.first_name != nil %>
+  
+app/views/layouts/application.html.erb:39:in `_app_views_layouts_application_html_erb__1895889995201655502_70109227580460'
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:50:19 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 21.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_is_admin?' for #<#<Class:0x00007f8725a76df0>:0x00007f872d5bf7f0>):
+    36:         <!-- partie droite avec dropdown -->
+    37:         <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    38: 
+    39:           <% if user_signed_in? && user_is_admin? %> 
+    40:             <div class="nav-item dropdown">
+    41:                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    42:                   <% if current_user.first_name != nil %>
+  
+app/views/layouts/application.html.erb:39:in `_app_views_layouts_application_html_erb__1895889995201655502_70109271331520'
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:50:52 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 500 Internal Server Error in 322ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_is_admin?' for #<#<Class:0x00007f8725a76df0>:0x00007f872c2c8980>):
+    36:         <!-- partie droite avec dropdown -->
+    37:         <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    38: 
+    39:           <% if user_signed_in? %> && <% user_is_admin? %> 
+    40:             <div class="nav-item dropdown">
+    41:                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    42:                   <% if current_user.first_name != nil %>
+  
+app/views/layouts/application.html.erb:39:in `_app_views_layouts_application_html_erb__1895889995201655502_70109276150820'
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:55:33 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 179ms (Views: 166.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2019-02-15 17:55:40 +0100
+Processing by Admin::AdminsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering admin/admins/index.html.erb within layouts/application
+  Rendered admin/admins/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:55:41 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (51.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 107ms (Views: 50.1ms | ActiveRecord: 51.9ms)
+
+
