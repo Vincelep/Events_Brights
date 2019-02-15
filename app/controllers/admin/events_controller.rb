@@ -1,5 +1,8 @@
 class Admin::EventsController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :check_if_admin
+
   def index
     @events = Event.all.reverse
   end
@@ -30,6 +33,22 @@ class Admin::EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to admin_events_path
+  end
+
+  private
+
+  def authenticate_user
+    unless current_user
+        flash[:danger] = "Connecte-toi ;)"
+        redirect_to user_session_path
+    end
+  end
+
+  def check_if_admin
+    unless current_user.is_admin == true
+      redirect_to root_path
+      flash[:danger] = "Vous n'êtes pas admin !"
+    end
   end
 
 end
