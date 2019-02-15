@@ -3,7 +3,19 @@
 <div class="card border-warning text-center m-5">
 
   <div class="card-header">
-    <h1><i class="fas fa-sun"></i> <%= @event.title %></h1>
+    <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+
+    <%if @event.avatar.attached?%>
+      <%= image_tag @event.avatar.variant(resize: "200x200").processed, alt: 'avatar' %>
+    <%else%>
+      <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    <%end%>
+
+      <%= form_tag event_avatars_path(@event), multipart: true do %>
+      <%= file_field_tag :avatar %>
+      <%= submit_tag "Change cover" %>
+    <% end %>
+
   </div>
   <div class="card-body text-warning">
       <p class="m-2"><%= @event.description %></p>

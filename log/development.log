@@ -14531,3 +14531,1000 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 182ms (Views: 96.3ms | ActiveRecord: 27.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-14 14:59:20 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 324ms (Views: 251.4ms | ActiveRecord: 25.9ms)
+
+
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6045750353476342110)[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateActiveStorageTables (20190215095138)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (126.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190215095138_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20190215095138_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20190215095138_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20190215095138_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20190215095138_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190215095138"]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6045750353476342110)[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-02-15 10:56:03 +0100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 390ms (Views: 334.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 10:56:08 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 8.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1>
+     7: 
+     8:     <h3>Avatar actuel</h3>
+     9:     <%if @user.avatar.attached?%>
+    10:       <%= image_tag @user.avatar, alt: 'avatar' %>
+    11:     <%else%>
+    12:       <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261196440120'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 10:56:24 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (5.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:9
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:20
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:33
+  Rendered events/show.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 135ms (Views: 112.7ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 10:56:47 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (35.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (11.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:19
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:32
+  Rendered events/show.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 201ms (Views: 110.0ms | ActiveRecord: 85.1ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 10:56:57 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:32
+  Rendered events/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 69ms (Views: 57.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:08:26 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:38
+  Rendered events/show.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 250ms (Views: 175.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:08:41 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 107ms (Views: 85.3ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/events/3/avatars" for 127.0.0.1 at 2019-02-15 11:08:53 +0100
+Processing by AvatarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D18IusVJYi7qun96BdfDsA569BpyRcW+gDJvuV1CdNS2LPy4VnSKxHboh3owv8Mk+qDvA+ZBkP5XcD5TeQLiJA==", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fcdf1569750 @tempfile=#<Tempfile:/var/folders/xk/736l1mr971l0gpq25cdpd6hh0000gn/T/RackMultipart20190215-75949-1vsvu7j.jpg>, @original_filename="noe pp.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"noe pp.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"mettre à jour", "event_id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:4
+[36m  Disk Storage (3.2ms) [0m[32mUploaded file to key: PUGB2xTucuhn42hwpqMoBxwz (checksum: aovrK4Zk4HRq0INKYDfaIg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Blob Create (19.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "PUGB2xTucuhn42hwpqMoBxwz"], ["filename", "noe pp.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 114193], ["checksum", "aovrK4Zk4HRq0INKYDfaIg=="], ["created_at", "2019-02-15 10:08:53.776736"]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Attachment Create (3.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "Event"], ["record_id", 3], ["blob_id", 1], ["created_at", "2019-02-15 10:08:53.818426"]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mEvent Update (1.3ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1 WHERE "events"."id" = $2[0m  [["updated_at", "2019-02-15 10:08:53.823486"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/avatars_controller.rb:4
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 437a797e-5668-468f-b54b-a5ec7eb47737) to Async(default) with arguments: #<GlobalID:0x00007fcdf13a8c18 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 151ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:08:53 +0100
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/globalid-0.4.2/lib/global_id/locator.rb:130
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737] Performing ActiveStorage::AnalyzeJob (Job ID: 437a797e-5668-468f-b54b-a5ec7eb47737) from Async(default) with arguments: #<GlobalID:0x00007fcdf1362f38 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/1>>
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737] [36m  Disk Storage (0.8ms) [0m[34mDownloaded file from key: PUGB2xTucuhn42hwpqMoBxwz[0m
+  ↳ app/controllers/events_controller.rb:10
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  Rendering events/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [437a797e-5668-468f-b54b-a5ec7eb47737] Performed ActiveStorage::AnalyzeJob (Job ID: 437a797e-5668-468f-b54b-a5ec7eb47737) from Async(default) in 217.18ms
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 316ms (Views: 104.8ms | ActiveRecord: 200.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d95ae359a0bba2452b6e70a22445771b170cfb9/noe%20pp.jpg" for 127.0.0.1 at 2019-02-15 11:08:54 +0100
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d95ae359a0bba2452b6e70a22445771b170cfb9", "filename"=>"noe pp"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/warden-1.2.8/lib/warden/manager.rb:36
+[36m  Disk Storage (2.8ms) [0m[34mGenerated URL for file at key: PUGB2xTucuhn42hwpqMoBxwz (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVRlZIUWpKNFZIVmpkV2h1TkRKb2QzQnhUVzlDZUhkNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTlsSUhCd0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYm05bEpUSXdjSEF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDItMTVUMTA6MTM6NTQuMjUxWiIsInB1ciI6ImJsb2Jfa2V5In19--89a0dc679d595891ea2ce55a6e133e3b978dfa6a/noe%20pp.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22noe+pp.jpg%22%3B+filename%2A%3DUTF-8%27%27noe%2520pp.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVRlZIUWpKNFZIVmpkV2h1TkRKb2QzQnhUVzlDZUhkNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTlsSUhCd0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYm05bEpUSXdjSEF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDItMTVUMTA6MTM6NTQuMjUxWiIsInB1ciI6ImJsb2Jfa2V5In19--89a0dc679d595891ea2ce55a6e133e3b978dfa6a/noe%20pp.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22noe+pp.jpg%22%3B+filename%2A%3DUTF-8%27%27noe%2520pp.jpg
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVRlZIUWpKNFZIVmpkV2h1TkRKb2QzQnhUVzlDZUhkNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTlsSUhCd0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYm05bEpUSXdjSEF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDItMTVUMTA6MTM6NTQuMjUxWiIsInB1ciI6ImJsb2Jfa2V5In19--89a0dc679d595891ea2ce55a6e133e3b978dfa6a/noe%20pp.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22noe+pp.jpg%22%3B+filename%2A%3DUTF-8%27%27noe%2520pp.jpg" for 127.0.0.1 at 2019-02-15 11:08:54 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"noe pp.jpg\"; filename*=UTF-8''noe%20pp.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVRlZIUWpKNFZIVmpkV2h1TkRKb2QzQnhUVzlDZUhkNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibTlsSUhCd0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYm05bEpUSXdjSEF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDItMTVUMTA6MTM6NTQuMjUxWiIsInB1ciI6ImJsb2Jfa2V5In19--89a0dc679d595891ea2ce55a6e133e3b978dfa6a", "filename"=>"noe pp"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/events/3/avatars" for 127.0.0.1 at 2019-02-15 11:09:06 +0100
+Processing by AvatarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rP1tTyPbXjShcOcwrqS7JCCjJdzyHOe8WeEmgx6MCmEVjplNsOa23j0iHzCbzLuw1Hk+xWYYsvyOo3dpOsyckQ==", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fcdeb69b4d0 @tempfile=#<Tempfile:/var/folders/xk/736l1mr971l0gpq25cdpd6hh0000gn/T/RackMultipart20190215-75949-1kg8ffk.png>, @original_filename="bootstrap_logo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"bootstrap_logo.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"mettre à jour", "event_id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:4
+[36m  Disk Storage (2.4ms) [0m[32mUploaded file to key: iDgW4PyydtDEMPXEQtaxji2N (checksum: wXhdUKkpJUQZ+kqtBWCwWA==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Blob Create (4.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "iDgW4PyydtDEMPXEQtaxji2N"], ["filename", "bootstrap_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 116689], ["checksum", "wXhdUKkpJUQZ+kqtBWCwWA=="], ["created_at", "2019-02-15 10:09:06.621901"]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Attachment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "Event"], ["record_id", 3], ["blob_id", 2], ["created_at", "2019-02-15 10:09:06.631710"]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[36mEvent Update (0.2ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1 WHERE "events"."id" = $2[0m  [["updated_at", "2019-02-15 10:09:06.633086"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/avatars_controller.rb:4
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1afcedf9-a783-433f-ad23-cc9f1c76f351) to Async(default) with arguments: #<GlobalID:0x00007fcdf1a65ba0 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/globalid-0.4.2/lib/global_id/locator.rb:130
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1afcedf9-a783-433f-ad23-cc9f1c76f351] Performing ActiveStorage::AnalyzeJob (Job ID: 1afcedf9-a783-433f-ad23-cc9f1c76f351) from Async(default) with arguments: #<GlobalID:0x00007fcdf15cfb18 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1afcedf9-a783-433f-ad23-cc9f1c76f351] [36m  Disk Storage (0.5ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1afcedf9-a783-433f-ad23-cc9f1c76f351] Error performing ActiveStorage::AnalyzeJob (Job ID: 1afcedf9-a783-433f-ad23-cc9f1c76f351) from Async(default) in 1.57ms: Bootsnap::LoadPathCache::Store::NestedTransactionError (Bootsnap::LoadPathCache::Store::NestedTransactionError):
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/store.rb:43:in `transaction'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/cache.rb:137:in `push_paths_locked'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/cache.rb:120:in `block in reinitialize'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/cache.rb:114:in `synchronize'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/cache.rb:114:in `reinitialize'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/cache.rb:46:in `find'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:28:in `require'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:291:in `block in require'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:257:in `load_dependency'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/dependencies.rb:291:in `require'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/analyzer/image_analyzer.rb:36:in `block in read_image'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284:in `with_locale'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/notifications.rb:168:in `instrument'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/execution.rb:38:in `perform_now'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/execution.rb:24:in `block in execute'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/reloader.rb:72:in `wrap'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/execution.rb:22:in `execute'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/noemargui/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.4/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 933a94b1-31a4-4d92-9097-25e9427ff0a0) to Async(default) with arguments: #<GlobalID:0x00007fcdf15f73c0 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 43ms (ActiveRecord: 7.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/globalid-0.4.2/lib/global_id/locator.rb:130
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0] Performing ActiveStorage::PurgeJob (Job ID: 933a94b1-31a4-4d92-9097-25e9427ff0a0) from Async(default) with arguments: #<GlobalID:0x00007fcdf15fc190 @uri=#<URI::GID gid://thp26-event-project/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:09:06 +0100
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   [1m[36mActiveStorage::Blob Destroy (2.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  Rendering events/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0]   ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/i18n-1.5.3/lib/i18n.rb:284
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: PUGB2xTucuhn42hwpqMoBxwz[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/PUGB2xTucuhn42hwpqMoBxwz/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [933a94b1-31a4-4d92-9097-25e9427ff0a0] Performed ActiveStorage::PurgeJob (Job ID: 933a94b1-31a4-4d92-9097-25e9427ff0a0) from Async(default) in 26.86ms
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 57ms (Views: 46.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e/bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:09:06 +0100
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e", "filename"=>"bootstrap_logo"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/warden-1.2.8/lib/warden/manager.rb:36
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: iDgW4PyydtDEMPXEQtaxji2N (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTl2ZEhOMGNtRndYMnh2WjI4dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRpYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTAyLTE1VDEwOjE0OjA2Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d22ede37b8af63ce467867d1e5762248690cc24d/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTl2ZEhOMGNtRndYMnh2WjI4dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRpYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTAyLTE1VDEwOjE0OjA2Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d22ede37b8af63ce467867d1e5762248690cc24d/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTl2ZEhOMGNtRndYMnh2WjI4dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRpYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTAyLTE1VDEwOjE0OjA2Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d22ede37b8af63ce467867d1e5762248690cc24d/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:09:06 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTl2ZEhOMGNtRndYMnh2WjI4dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRpYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTAyLTE1VDEwOjE0OjA2Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d22ede37b8af63ce467867d1e5762248690cc24d", "filename"=>"bootstrap_logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:09:12 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 55ms (Views: 48.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:09:13 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (39.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 121ms (Views: 67.9ms | ActiveRecord: 45.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:09:14 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (55.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 105ms (Views: 42.7ms | ActiveRecord: 55.9ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-15 11:09:15 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 2], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 62ms (Views: 50.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:09:20 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 59ms (Views: 48.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:15:42 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  Rendered events/show.html.erb within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 11.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `resize' for #<ActiveStorage::Attached::One:0x00007fcdf1ebcf50>):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.resize "100x100", alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261262015600'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:16:19 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+  Rendered events/show.html.erb within layouts/application (39.2ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 1.5ms)
+
+
+  
+LoadError (cannot load such file -- mini_magick):
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261263443400'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:18:07 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  Rendered events/show.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<Event:0x00007fcdf386dd50>):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.image.variant(resize: '100x100').processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261263459020'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:19:36 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+  Rendered events/show.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.1ms)
+
+
+  
+LoadError (cannot load such file -- mini_magick):
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261261679240'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:22:36 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+  Rendered events/show.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 2.4ms)
+
+
+  
+LoadError (cannot load such file -- mini_magick):
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___804037909452494908_70261200567660'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:23:24 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (0.7ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+  Rendered events/show.html.erb within layouts/application (94.6ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 15.0ms)
+
+
+  
+ActionView::Template::Error (You must have ImageMagick or GraphicsMagick installed):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.variant(resize: "100x100").processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb__2401932112789507903_70270879068720'
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:24:10 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 427ms (Views: 372.0ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:24:14 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (1.0ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+  Rendered events/show.html.erb within layouts/application (57.9ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 32.8ms)
+
+
+  
+ActionView::Template::Error (You must have ImageMagick or GraphicsMagick installed):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.variant(resize: "100x100").processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___64968014296875535_70150218223100'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:27:42 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (1.6ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+  Rendered events/show.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (You must have ImageMagick or GraphicsMagick installed):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.variant(resize: "100x100").processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb___64968014296875535_70150243328300'
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:29:04 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (6.4ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+  Rendered events/show.html.erb within layouts/application (98.5ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 14.9ms)
+
+
+  
+ActionView::Template::Error (You must have ImageMagick or GraphicsMagick installed):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.variant(resize: "100x100").processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb__3514909030810847065_70187125621820'
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:29:11 +0100
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 362ms (Views: 356.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:29:13 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (3.5ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+  Rendered events/show.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (You must have ImageMagick or GraphicsMagick installed):
+     6:     <h1><i class="fas fa-sun"></i> <%= @event.title %></h1></br>
+     7: 
+     8:     <%if @event.avatar.attached?%>
+     9:       <%= image_tag @event.avatar.variant(resize: "100x100").processed, alt: 'avatar' %>
+    10:     <%else%>
+    11:       <p>=== Il n'y a pas encore d'avatar lié à cet event ===</p>
+    12:     <%end%>
+  
+app/views/events/show.html.erb:9:in `_app_views_events_show_html_erb__3514909030810847065_70187181430360'
+Started GET "/" for 127.0.0.1 at 2019-02-15 11:32:07 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 371ms (Views: 322.2ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:32:09 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (no)[0m
+[36m  Disk Storage (7.5ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+[36m  Disk Storage (3.2ms) [0m[32mUploaded file to key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (163.9ms)
+Completed 200 OK in 270ms (Views: 189.9ms | ActiveRecord: 49.8ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--26aac7fac843cec1a9adf4e358a310e0c6d6cccc/bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:09 +0100
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTVRBd2VERXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--26aac7fac843cec1a9adf4e358a310e0c6d6cccc", "filename"=>"bootstrap_logo"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/warden-1.2.8/lib/warden/manager.rb:36
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (yes)[0m
+[36m  Disk Storage (407.9ms) [0m[34mGenerated URL for file at key: variants/iDgW4PyydtDEMPXEQtaxji2N/a6fc531d93152e352f941dda3a24319ed801fd73057e9be80ff49a60df9e68bd (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyRTJabU0xTXpGa09UTXhOVEpsTXpVeVpqazBNV1JrWVROaE1qUXpNVGxsWkRnd01XWmtOek13TlRkbE9XSmxPREJtWmpRNVlUWXdaR1k1WlRZNFltUUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoxMC4yNzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--37692a5f76579962545f0688826f85f4a954154f/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyRTJabU0xTXpGa09UTXhOVEpsTXpVeVpqazBNV1JrWVROaE1qUXpNVGxsWkRnd01XWmtOek13TlRkbE9XSmxPREJtWmpRNVlUWXdaR1k1WlRZNFltUUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoxMC4yNzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--37692a5f76579962545f0688826f85f4a954154f/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png
+Completed 302 Found in 412ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyRTJabU0xTXpGa09UTXhOVEpsTXpVeVpqazBNV1JrWVROaE1qUXpNVGxsWkRnd01XWmtOek13TlRkbE9XSmxPREJtWmpRNVlUWXdaR1k1WlRZNFltUUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoxMC4yNzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--37692a5f76579962545f0688826f85f4a954154f/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:10 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyRTJabU0xTXpGa09UTXhOVEpsTXpVeVpqazBNV1JrWVROaE1qUXpNVGxsWkRnd01XWmtOek13TlRkbE9XSmxPREJtWmpRNVlUWXdaR1k1WlRZNFltUUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoxMC4yNzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--37692a5f76579962545f0688826f85f4a954154f", "filename"=>"bootstrap_logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:32:25 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (no)[0m
+[36m  Disk Storage (5.7ms) [0m[34mDownloaded file from key: iDgW4PyydtDEMPXEQtaxji2N[0m
+[36m  Disk Storage (1.0ms) [0m[32mUploaded file to key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 167ms (Views: 157.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--daaf6abea239ee9d6ce5dac93fd8c340a2ad3647/bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:25 +0100
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5b53191fd71d1cf51c0556e0afbb0d8c579255e", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTWpBd2VESXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--daaf6abea239ee9d6ce5dac93fd8c340a2ad3647", "filename"=>"bootstrap_logo"}
+  [1m[36mActiveStorage::Blob Load (4.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/warden-1.2.8/lib/warden/manager.rb:36
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (yes)[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png
+Completed 302 Found in 9ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:25 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88", "filename"=>"bootstrap_logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:32:40 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (yes)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 88ms (Views: 79.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:40 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88", "filename"=>"bootstrap_logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:32:50 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (yes)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 58ms (Views: 47.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:32:51 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88", "filename"=>"bootstrap_logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:33:10 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (yes)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 107ms (Views: 89.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:33:10 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88", "filename"=>"bootstrap_logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-15 11:33:21 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:12
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Event"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:8
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/iDgW4PyydtDEMPXEQtaxji2N/fefee911f92ad8ef57f8a222a307286a8336aee281250766ddf20d0042f25b41 (yes)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/noemargui/.rvm/gems/ruby-2.5.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."attendee_id" WHERE "attendances"."event_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["event_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:37
+  Rendered events/show.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 102ms (Views: 89.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88/bootstrap_logo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bootstrap_logo.png%22%3B+filename%2A%3DUTF-8%27%27bootstrap_logo.png" for 127.0.0.1 at 2019-02-15 11:33:22 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bootstrap_logo.png\"; filename*=UTF-8''bootstrap_logo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSm5kbUZ5YVdGdWRITXZhVVJuVnpSUWVYbGtkRVJGVFZCWVJWRjBZWGhxYVRKT0wyWmxabVZsT1RFeFpqa3lZV1E0WldZMU4yWTRZVEl5TW1Fek1EY3lPRFpoT0RNek5tRmxaVEk0TVRJMU1EYzJObVJrWmpJd1pEQXdOREptTWpWaU5ERUdPZ1pGVkRvUVpHbHpjRzl6YVhScGIyNUpJazlwYm14cGJtVTdJR1pwYkdWdVlXMWxQU0ppYjI5MGMzUnlZWEJmYkc5bmJ5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKdmIzUnpkSEpoY0Y5c2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMi0xNVQxMDozNzoyNS41ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0bfac740529f08808a53e8d7f06af560ee564e88", "filename"=>"bootstrap_logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
