@@ -7,4 +7,11 @@ Rails.application.routes.draw do
   end
   resources :users
   root 'events#index'
+
+  namespace :admin do
+     resources :users, :events
+     get '/admin', to: 'admins#index'
+     root "admins#index"
+   end
+
 end

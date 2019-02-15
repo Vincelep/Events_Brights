@@ -1,0 +1,17 @@
+</br></br>
+<div class="card border-warning  m-5">
+  <div class="card-body text-primary">
+    <div class="card-body text-primary">
+      <ul class="card-text list-group">
+        <% @users.each do |user| %>
+          <li class="list-group-item">
+            Prénom : <%= user.first_name %></br>
+            Nom : <%= user.last_name %></br>
+            Email : <%= user.email %><br>
+          </li>
+        <% end %>
+        </br></br>
+      </ul>
+    </div>
+  </div>
+</div>
