@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :attendances, only: [:new, :create, :index]
     resources :avatars, only: [:create]
   end
-  resources :users
+  resources :users do 
+    resources :pictures, only: [:create]
+  end
   root 'events#index'
 
   namespace :admin do

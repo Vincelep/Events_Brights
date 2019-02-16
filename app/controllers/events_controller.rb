@@ -10,9 +10,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attendees = @event.attendees
     @admin = @event.administrator
-    # @comments = @event.comments
-    # @comment = Comment.new
-    # @like = Like.new
   end
 
   def new
@@ -66,13 +63,5 @@ class EventsController < ApplicationController
           redirect_to user_session_path
       end
     end
-
-    # def author_event
-    #   @event = Event.find(params[:id])
-    #   unless current_user == @event.administrator
-    #       flash[:danger] = "Tu n'es pas l'auteur de cet event."
-    #       redirect_to event_path(params[:id])
-    #   end
-    # end
 
 end

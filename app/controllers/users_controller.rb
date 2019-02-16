@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user
+  before_action :only_user
 
   def show
     @user = User.find(params[:id])
@@ -30,4 +31,10 @@ class UsersController < ApplicationController
       end
     end
 
+    def only_user
+      unless current_user.id == params[:id].to_i
+        redirect_to user_path(current_user)
+        flash[:danger] = "Votre profil est celui-ci !"
+      end
+    end
 end
